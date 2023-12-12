@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../static/booking.js" defer></script>
+    <title>Booking Ticket Page</title>
+    <link rel="stylesheet" href="../static/booking.css">
+    <link rel="shortcut icon" href="#">
+    <!-- Error on Chrome: GET http://127.0.0.1:5001/favicon.ico 404 (NOT FOUND) -->
+</head>
+<body id="backgroundimg">
+    <div id="backgroundcolor" class="container">
+        <div class="container text-center d-flex align-items-center justify-content-center" style="width: auto;">
+            <div id="col" class="col" style="background: transparent; color: white;">
+                <p id="main-title">Harry Potter Experience</p>
+                <p id="sub-title">Ticket Confirmation</p>
+
+                <div id="row-table" class="row" style="border: solid 2px white;">
+                    <div class="col-sm-6">
+                        <div>
+                            <div style="font-size: 70px; color: white;">{{date.split("-")[2]}}</div>
+                            <div id="monthname" style="font-size: 25px; color: white;">{{monthname}}</div>
+                            <div style="font-size: 25px; color: white;">Time - {{time}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div style="font-size: 16px; color: white; margin-top: 15px; margin-bottom: 20px; font-weight: bold;">{{day}}, {{date}}</div>
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-sm-6" style="font-size: 20px; color: white;">
+                                Child
+                            </div>
+                            <div class="col-sm-6" style="font-size: 20px; color: white;">
+                                {{childval}}
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-sm-6" style="font-size: 20px; color: white;">
+                                Adult
+                            </div>
+                            <div class="col-sm-6" style="font-size: 20px; color: white;">
+                                {{adultval}}
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px; border: solid 2px white; border-left: none; border-right: none; border-bottom: none;">
+                            <div class="col-sm-6" style="padding-top: 10px; font-size: 20px; color: white;">
+                                Total
+                            </div>
+                            <div class="col-sm-6" style="padding-top: 10px; font-size: 20px; color: white;">
+                                {{total}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="btns" style="margin-top: 20px;">
+                    <button id="confirmbtn" onclick="confirmFunction()">Confirm</button>
+                    <button id="cancelbtn" onclick="cancelFunction()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="date" style="display: none;">{{date}}</div>
+    <div id="day" style="display: none;">{{day}}</div>
+    <div id="time" style="display: none;">{{time}}</div>
+    <div id="child" style="display: none;">{{childval}}</div>
+    <div id="adult" style="display: none;">{{adultval}}</div>
+
+    <div id="backtickettext" style="display: none;">
+        Thank You For Having Experience With Us!
+    </div>
+</body>
+</html>

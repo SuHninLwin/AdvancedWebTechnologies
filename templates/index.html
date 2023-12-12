@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Harry Potter Experience</title>
+    <link rel="stylesheet" href="../static/index.css">
+    <script src="../static/index.js" defer></script>
+    <link rel="shortcut icon" href="#">
+    <!-- Error on Chrome: GET http://127.0.0.1:5001/favicon.ico 404 (NOT FOUND) -->
+</head>
+<body>
+    <div id="calendar" class="container">
+        <div class="row">
+            <span id="uppermost-title">SELECT A DATE</span> 
+            <button id="close-btn" class="btn btn-success full-right" onclick="closeFunction()">&times;</button>
+            <!-- id="close-btn" &times; -->
+        </div>
+        <div class="row">
+            <div id="month-view" class="col-sm-6">
+                <div id="year-month-selector" class="text-center">
+                    <div id="prev">&lt;</div>
+                    <div id="month-name-div">
+                        <button id="month-name" onclick="monthDropDownFunction()"></button>
+                    </div>
+                    <div id="up-down-arrow">
+                        <span id="up-arrow">&#9650</span>
+                        <span id="down-arrow">&#9660</span>
+                    </div>
+                    <div id="month-year-div">
+                        <button id="month-year" onclick="yearDropDownFunction()"></button>
+                    </div>
+                    <div id="next">&gt;</div>
+                </div>
+                <div class="table-responsive"> 
+                    <!-- class="table-wrap" -->
+                    <table id="plan" class="table-responsive"></table>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div id="avail-status-block" ></div>
+                        <div id="avail-status-word">Available</div>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <div id="soldout-status-block"></div>
+                        <div id="soldout-status-word">Sold Out</div>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <div id="selected-status-block"></div>
+                        <div id="selected-status-word">Selected</div>
+                    </div>
+                    
+                </div>
+                <form>
+                    <div class="row">
+                        <div id="leftcolinput" class="form-group col-sm-6">
+                            <label id="textadult" for="inputadult">For Adults</label>
+                            <input id="inputadult" class="form-control input-sm" type="number" name="adult" min="0" max="4" placeholder="Enter number of adult..." required>
+                            <span class="validity"></span>
+                        </div>
+                        <div id="rightcolinput" class="form-group col-sm-6">
+                            <label id="textchild" for="inputchild">For Children</label>
+                            <input id="inputchild" class="form-control input-sm" type="number" min="0" max="4" name="child" placeholder="Enter number of child..." required>
+                            <span class="validity"></span>
+                        </div>
+                    </div>
+                </form>
+                <!-- <div id="avail-status-block"></div>
+                <div id="status-word">Available</div>
+                <div id="soldout-status-block"></div>
+                <div id="status-word">Sold Out</div>
+                <div id="selected-status-block"></div>
+                <div id="status-word">Selected</div> -->
+            </div>
+
+            <div id="day"></div>
+        </div>
+    </div>
+</body>
+</html>
